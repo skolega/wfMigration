@@ -1,0 +1,40 @@
+
+.table-hover tr{
+    cursor: pointer !important;
+}
+
+.dobigimage{
+    position: absolute;
+    padding:10px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    z-index: 9999;
+
+
+}
+
+.dobigimage img{
+    max-height: 300px;
+}
+
+.thumbnail {
+    height: auto !important; 
+    overflow: hidden;
+}
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 0px !important; 
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+.image-selected {
+    background-color: greenyellow !important;
+}

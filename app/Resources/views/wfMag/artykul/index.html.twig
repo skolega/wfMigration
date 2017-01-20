@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Artykuls list</h1>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Produkty <small>WfMag</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            {% include 'wfMag/artykul/article_menu.html.twig' %}
+            <div class="x_content">
+
+                <p>Zaznacz jeden lub wiele aby wykonac akcje</p>
+                <div class="table-responsive">
+                    <table class="table table-hover jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" id="check-all" class="flat">
+                                </th>
+                                <th class="column-title">Idartykulu</th>
+                                <th class="column-title">Nazwa</th>
+                                <th class="column-title">Cena zakupu brutto</th>
+                                <th class="column-title">Opis</th>
+                                <th class="column-title">Uwagi</th>
+                                <th class="column-title">Waga</th>
+                                <th class="column-title">Jednostka wagi</th>
+                                <th class="column-title">Wymiar w</th>
+                                <th class="column-title">Wymiar s</th>
+                                <th class="column-title">Wymiar g</th>
+                                <th class="column-title">Jed wymiaru</th>
+                                <th class="column-title">Cenapromocjib</th>
+                                <th class="column-title">Zablokowany</th>
+                                <th class="column-title">Producent</th>
+                                <th class="column-title">Idopakowaniaref</th>
+                                <th class="column-title">Cenabkgo</th>
+                                <th class="column-title">Jestzdjecie</th>
+                                <th class="column-title no-link last">Operacje</th>
+                                <th class="bulk-actions" colspan="7">
+                                    <a class="antoo" style="color:#fff; font-weight:500;">Grupowe operacje ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for artykul in artykuls %}
+                                <tr class="even pointer clickable-row" data-href='{{ path('artykul_show', { 'id': artykul.idArtykulu }) }}'>
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td>{{ artykul.idArtykulu }}</td>
+                                    <td>{{ artykul.nazwa }}</td>
+                                    <td>{{ artykul.cenaZakupuBrutto }}</td>
+                                    <td>{{ artykul.opis[:35]~' ...'   }}</td>
+                                    <td>{{ artykul.uwagi }}</td>
+                                    <td>{{ artykul.waga }}</td>
+                                    <td>{{ artykul.jedWagi }}</td>
+                                    <td>{{ artykul.wymiarW }}</td>
+                                    <td>{{ artykul.wymiarS }}</td>
+                                    <td>{{ artykul.wymiarG }}</td>
+                                    <td>{{ artykul.jedWymiaru }}</td>
+                                    <td>{{ artykul.cenaPromocjiB }}</td>
+                                    <td>{{ artykul.zablokowany }}</td>
+                                    <td>{{ artykul.producent }}</td>
+                                    <td>{{ artykul.idOpakowaniaRef }}</td>
+                                    <td>{{ artykul.cenabkgo }}</td>
+                                    <td>{{ artykul.jestZdjecie }}aa</td>
+                                    <td>
+                                        <a class="btn btn-danger" href="{{ path('artykul_delete', { 'id': artykul.idArtykulu }) }}" onclick="return confirm('jesteś pewien?');">
+                                            <i class="fa fa-edit"></i> Usuń
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'wfMag/artykul/article_menu.html.twig' %}
+{% endblock %}
+{% block js %}
+    <!-- jQuery -->
+    <script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('assets/vendors/iCheck/icheck.min.js') }}"></script>
+    <!-- myApp.js -->
+    <script src="{{ asset('assets/js/myApp.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('assets/js/custom.min.js') }}"></script>
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="header">Produkty na stronie www - wordpress+woocommerce</h1>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Table design <small>Custom design</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="x_content">
+
+                <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+                <div class="table-responsive">
+                    <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" id="check-all" class="flat">
+                                </th>
+                                <th class="column-title">Id</th>
+                                <th class="column-title">Produkt</th>
+                                <th class="column-title">Opis</th>
+                                <th class="column-title">Krótki Opis</th>
+                                <th class="column-title no-link last">Obrazki</th>
+                                <th class="column-title no-link last">Operacje</th>
+                                <th class="bulk-actions" colspan="7">
+                                    <a class="antoo" style="color:#fff; font-weight:500;">Grupowe operacje ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for wpPost in wpPosts %}
+                                <tr  class="even pointer">
+                                    <td class="a-center ">
+                                        <input type="checkbox" class="flat" name="table_records">
+                                    </td>
+                                    <td>{{ wpPost.Id }}</td>
+                                    <td>{{ wpPost.postTitle }}</td>
+                                    <td>{{ wpPost.postContent[:35]~' ...'  }}</td>
+                                    <td>{{ wpPost.postExcerpt[:35]~' ...' }}</td>
+                                    <td>{{ render(controller('AppBundle:WpPosts:searchPostImages', { 'id': wpPost.Id })) }}</td>
+                                    <td>
+                                        <a class="btn btn-danger"  href="{{ path('wpposts_delete', { 'id': wpPost.id }) }}">
+                                            <i class="fa fa-edit"></i> Usuń
+                                        </a> 
+                                        <a href="{{ path('searchMoreImages', { 'search': wpPost.postTitle, 'id': wpPost.Id }) }}" class="btn btn-success">Zmień/Dodaj obrazki</a>
+                                    </td>
+                                    
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-pills">
+        <li>
+            <a class="btn btn-success" href="{{ path('wpposts_new') }}">Utwórz nowy produkt www</a>
+            <a class="btn btn-success" href="{{ path('wppost_serialize') }}">Generuj xml</a>
+        </li>
+    </ul>
+{% endblock %}
+{% block js %}
+    <!-- jQuery -->
+    <script src="{{ asset('assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('assets/vendors/fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('assets/vendors/nprogress/nprogress.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('assets/vendors/iCheck/icheck.min.js') }}"></script>
+    <!-- MyApp -->
+    <script src="{{ asset('assets/js/myApp.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('assets/js/custom.min.js') }}"></script>
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

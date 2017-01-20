@@ -1,0 +1,156 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: parameters_1.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@WfMagConnectionBundle/Resources/config/services.yml" }
+    - { resource: "@WpConnectionBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+framework:
+    #esi:             ~
+    translator: ~
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+    serializer:
+        enabled: true
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_mysql
+                host:     "%database_host%"
+                port:     "%database_port%"
+                dbname:   "%database_name%"
+                user:     "%database_user%"
+                password: "%database_password%"
+                charset:  UTF8
+            wp:
+                driver:   pdo_mysql
+                host:     "%database_host2%"
+                port:     "%database_port2%"
+                dbname:   "%database_name2%"
+                user:     "%database_user2%"
+                password: "%database_password2%"
+                charset:  UTF8
+            wfmag:
+                driver_class:   Realestate\MssqlBundle\Driver\PDODblib\Driver
+                host:           %database_host1%
+                dbname:         %database_name1%
+                user:           %database_user1%
+                password:       %database_password1%
+    orm:
+        default_entity_manager: default
+        auto_generate_proxy_classes: "%kernel.debug%"
+        default_entity_manager: default
+        
+        entity_managers:
+            default:
+                auto_mapping: false
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                connection: default
+                mappings:
+                    AppBundle: ~
+            wfmag:
+                connection: wfmag
+                auto_mapping: false
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                mappings:
+                    WfMagConnectionBundle: ~
+            wp:
+                connection: wp
+                auto_mapping: false
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                mappings:
+                    WpConnectionBundle: ~
+                    
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+                
+liip_imagine:
+    filter_sets:
+        thumbnail0:
+            filters:
+                thumbnail:
+                    size: [150, 150]
+                    mode: outbound    
+        thumbnail1:
+            filters:
+                thumbnail:
+                    size: [300, 181]
+                    mode: outbound 
+        thumbnail2:
+            filters:
+                thumbnail:
+                    size: [768, 463]
+                    mode: outbound    
+        thumbnail3:
+            filters:
+                thumbnail:
+                    size: [180, 180]
+                    mode: outbound            
+        thumbnail4:
+            filters:
+                thumbnail:
+                    size: [300, 300]
+                    mode: outbound    
+        thumbnail5:
+            filters:
+                thumbnail:
+                    size: [600, 482]
+                    mode: outbound 
+        thumbnail6:
+            filters:
+                thumbnail:
+                    size: [800, 400]
+                    mode: outbound            
+                    
+fos_rest:
+    view:
+        view_response_listener: 'force'
+    routing_loader:
+        default_format: json
+
+nelmio_api_doc: ~                  

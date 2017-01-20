@@ -1,0 +1,4 @@
+sku,post_status,post_title,post_content,post_excerpt,category,tags,manage_stock,stock_status,backorders,stock,price,regular_price,sale_price,weight,length,width,height,images,tax_status,tax_class,visibility,featured
+sku-1,publish,Product 1,This is a nice product. With a very long description,This is the short description,Cat1|Cat2->subcat1,tag1|tag2,yes,instock,notify,10,10,10,,25,100,200,100,http://www.example.come/image1.jpg|image2.jpg,taxable,custom_shipping_class,visible,yes
+sku-2,draft,Product 2,This is a nice product. With a very long description,This is the short description,Cat1|Cat2->subcat1,tag1|tag2,no,outofstock,yes,0,20,40,20,25,100,200,100,http://www.example.come/image1.jpg|image2.jpg,shipping,, visible,no
+sku-3,trash,Product 3,This is a nice product. With a very long description,This is the short description,Cat1|Cat2->subcat1,tag1|tag2,yes,instock,no,30,10,10,,25,100,200,100,http://www.example.come/image1.jpg|image2.jpg,none,, visible,yes

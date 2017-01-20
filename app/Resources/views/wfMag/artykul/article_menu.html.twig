@@ -1,0 +1,24 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <ul class="nav nav-pills">
+        <li>
+            <a class="btn btn-success" href="{{ path('artykul_new') }}">Utwórz nowy produkt Wf-Mag</a>
+        </li>
+        <li>
+            <a class="btn btn-warning" href="{{ path('artykul_serialize') }}" onclick="return confirm('jesteś pewien?');">Generuj xml</a>
+        </li>
+        <li>
+            <a class="btn btn-warning" href="{{ path('artykuly_to_wp') }}" onclick="return confirm('jesteś pewien?');">Wyślij na stronę www</a>
+        </li>
+
+    </ul>
+</div>
+<div class="col-md-5 col-sm-8 col-xs-12"> 
+    <form action="" method="post">
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-primary">Szukaj!</button>
+            </span>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,689 @@
+<?php
+
+namespace WfMagConnectionBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Kontrahent
+ *
+ * @ORM\Table(name="KONTRAHENT", uniqueConstraints={@ORM\UniqueConstraint(name="AK_KONTRAHENT_SEMAFOR_KONTRAHE", columns={"SEMAFOR", "ID_KONTRAHENTA"}), @ORM\UniqueConstraint(name="KONTRAHENT_KOD", columns={"KOD_KONTRAHENTA", "ID_FIRMY"})}, indexes={@ORM\Index(name="KONTRAHENT_IDFIR_NAZWA", columns={"ID_FIRMY", "NAZWA"}), @ORM\Index(name="KONTRAHENT_IDFIR_ODB_NAZWA", columns={"ID_FIRMY", "ODBIORCA", "NAZWA"}), @ORM\Index(name="KONTRAHENT_IDFIR_DOST_NAZWA", columns={"ID_FIRMY", "DOSTAWCA", "NAZWA"}), @ORM\Index(name="KONTRAHENT_IDFIR_NIP", columns={"ID_FIRMY", "NIP"}), @ORM\Index(name="KONTRAHENT_IDFIR_ODB_NIP", columns={"ID_FIRMY", "ODBIORCA", "NIP"}), @ORM\Index(name="KONTRAHENT_IDFIR_DOST_NIP", columns={"ID_FIRMY", "DOSTAWCA", "NIP"}), @ORM\Index(name="KONTRAHENT_IDFIR_MIEJSCOWOSC", columns={"ID_FIRMY", "MIEJSCOWOSC"}), @ORM\Index(name="KONTRAHENT_IDFIR_ODB_MIEJSCOWOSC", columns={"ID_FIRMY", "ODBIORCA", "MIEJSCOWOSC"}), @ORM\Index(name="KONTRAHENT_IDFIR_DOST_MIEJSCOWOSC", columns={"ID_FIRMY", "DOSTAWCA", "MIEJSCOWOSC"}), @ORM\Index(name="KONTRAHENT_IDFIR_KOD", columns={"ID_FIRMY", "KOD_POCZTOWY"}), @ORM\Index(name="KONTRAHENT_IDFIR_ODB_KOD", columns={"ID_FIRMY", "ODBIORCA", "KOD_POCZTOWY"}), @ORM\Index(name="KONTRAHENT_IDFIR_DOST_KOD", columns={"ID_FIRMY", "DOSTAWCA", "KOD_POCZTOWY"}), @ORM\Index(name="KONTRAHENT_IDFIR_NIPL", columns={"ID_FIRMY", "NIPL"}), @ORM\Index(name="KONTRAHENT_IDFIR_WOJEW", columns={"ID_FIRMY", "WOJEWODZTWO"}), @ORM\Index(name="KONTRAHENT_IDFIR_PESEL", columns={"ID_FIRMY", "PESEL"}), @ORM\Index(name="KONTRAHENT_IDFIR_KLUCZ", columns={"KLUCZ"}), @ORM\Index(name="KONTRAHENT_IDFIR_IDALLEGRO", columns={"ID_FIRMY", "ID_ALLEGRO"}), @ORM\Index(name="KONTRAHENT_IDFIR_LOGINALLEGRO", columns={"ID_FIRMY", "LOGIN_ALLEGRO"})})
+ * @ORM\Entity
+ */
+class Kontrahent
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_KONTRAHENTA", type="decimal", precision=18, scale=0, nullable=false)
+     */
+    private $idKontrahenta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_GRUPY", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idGrupy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_FIRMY", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idFirmy;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_TABELI_ODSETEK", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idTabeliOdsetek;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_RACHUNKU", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idRachunku;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_KLASYFIKACJI", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idKlasyfikacji;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NAZWA", type="string", length=50, nullable=true)
+     */
+    private $nazwa;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SYM_KRAJU", type="string", length=3, nullable=true)
+     */
+    private $symKraju;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_PLATNIKA", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idPlatnika;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="WOJEWODZTWO", type="string", length=30, nullable=true)
+     */
+    private $wojewodztwo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NAZWA_PELNA", type="string", length=200, nullable=true)
+     */
+    private $nazwaPelna;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ODBIORCA", type="smallint", nullable=true)
+     */
+    private $odbiorca;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DOSTAWCA", type="smallint", nullable=true)
+     */
+    private $dostawca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NIP", type="string", length=30, nullable=true)
+     */
+    private $nip = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="REGON", type="string", length=20, nullable=true)
+     */
+    private $regon;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PLATNIK_VAT", type="smallint", nullable=true)
+     */
+    private $platnikVat = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LIMIT_KUPIECKI", type="decimal", precision=14, scale=4, nullable=true)
+     */
+    private $limitKupiecki = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORMA_PLATNOSCI", type="string", length=50, nullable=true)
+     */
+    private $formaPlatnosci;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TERMIN_NALEZNOSCI", type="integer", nullable=true)
+     */
+    private $terminNaleznosci = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="TERMIN_ZOBOWIAZAN", type="integer", nullable=true)
+     */
+    private $terminZobowiazan = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PRIORYTET", type="smallint", nullable=true)
+     */
+    private $priorytet = '2';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KOD_KRESKOWY", type="string", length=20, nullable=true)
+     */
+    private $kodKreskowy;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DRUKUJ_OSTRZEZENIE", type="smallint", nullable=true)
+     */
+    private $drukujOstrzezenie;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="POKAZUJ_OSTRZEZENIE", type="smallint", nullable=true)
+     */
+    private $pokazujOstrzezenie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="OSTRZEZENIE", type="string", length=500, nullable=true)
+     */
+    private $ostrzezenie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="UWAGI", type="string", length=500, nullable=true)
+     */
+    private $uwagi;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="KOD_KONTRAHENTA", type="integer", nullable=true)
+     */
+    private $kodKontrahenta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KOD_POCZTOWY", type="string", length=20, nullable=true)
+     */
+    private $kodPocztowy = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MIEJSCOWOSC", type="string", length=50, nullable=true)
+     */
+    private $miejscowosc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ULICA_LOKAL", type="string", length=50, nullable=true)
+     */
+    private $ulicaLokal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ADRES_WWW", type="string", length=50, nullable=true)
+     */
+    private $adresWww;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SEMAFOR", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $semafor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="FLAGA_STANU", type="smallint", nullable=true)
+     */
+    private $flagaStanu = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NIPL", type="string", length=30, nullable=true)
+     */
+    private $nipl;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOS_KOD", type="string", length=5, nullable=true)
+     */
+    private $dosKod;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ZGODA_NA_PRZETWARZANIE", type="string", length=1, nullable=true)
+     */
+    private $zgodaNaPrzetwarzanie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KTO_WPISAL", type="string", length=50, nullable=true)
+     */
+    private $ktoWpisal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KTO_POPRAWIL", type="string", length=50, nullable=true)
+     */
+    private $ktoPoprawil;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOMYSLNY_RABAT", type="decimal", precision=6, scale=2, nullable=true)
+     */
+    private $domyslnyRabat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ADRES_EMAIL", type="string", length=255, nullable=true)
+     */
+    private $adresEmail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_HANDLOWCA", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $idHandlowca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="WYROZNIK", type="string", length=50, nullable=true)
+     */
+    private $wyroznik;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE1", type="string", length=100, nullable=true)
+     */
+    private $pole1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE2", type="string", length=100, nullable=true)
+     */
+    private $pole2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE3", type="string", length=100, nullable=true)
+     */
+    private $pole3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE4", type="string", length=100, nullable=true)
+     */
+    private $pole4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE5", type="string", length=100, nullable=true)
+     */
+    private $pole5;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE6", type="string", length=100, nullable=true)
+     */
+    private $pole6;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE7", type="string", length=100, nullable=true)
+     */
+    private $pole7;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE8", type="string", length=100, nullable=true)
+     */
+    private $pole8;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE9", type="string", length=100, nullable=true)
+     */
+    private $pole9;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POLE10", type="string", length=100, nullable=true)
+     */
+    private $pole10;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="KontrahentUE", type="smallint", nullable=true)
+     */
+    private $kontrahentue = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KLUCZ", type="string", length=200, nullable=true)
+     */
+    private $klucz = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="UTWORZONY_W_SYSTEMIE_ZEWNETRZNYM", type="smallint", nullable=false)
+     */
+    private $utworzonyWSystemieZewnetrznym = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SYM_KRAJU_KOR", type="string", length=3, nullable=true)
+     */
+    private $symKrajuKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KOD_POCZTOWY_KOR", type="string", length=20, nullable=true)
+     */
+    private $kodPocztowyKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MIEJSCOWOSC_KOR", type="string", length=50, nullable=true)
+     */
+    private $miejscowoscKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ULICA_LOKAL_KOR", type="string", length=50, nullable=true)
+     */
+    private $ulicaLokalKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="WOJEWODZTWO_KOR", type="string", length=30, nullable=true)
+     */
+    private $wojewodztwoKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PESEL", type="string", length=20, nullable=true)
+     */
+    private $pesel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOKUMENT_TOZSAMOSCI_NAZWA", type="string", length=50, nullable=true)
+     */
+    private $dokumentTozsamosciNazwa;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOKUMENT_TOZSAMOSCI_NUMER", type="string", length=30, nullable=true)
+     */
+    private $dokumentTozsamosciNumer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOKUMENT_WYDANY_PRZEZ", type="string", length=100, nullable=true)
+     */
+    private $dokumentWydanyPrzez;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DOKUMENT_DATA_WYDANIA", type="integer", nullable=true)
+     */
+    private $dokumentDataWydania;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RAKS_KOD_KONTRAHENTA", type="string", length=70, nullable=true)
+     */
+    private $raksKodKontrahenta = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="BLOKOWANIE", type="smallint", nullable=true)
+     */
+    private $blokowanie = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="KP_ID_Zdarzenia", type="decimal", precision=18, scale=0, nullable=true)
+     */
+    private $kpIdZdarzenia;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Incydentalny", type="smallint", nullable=true)
+     */
+    private $incydentalny = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ZABLOKOWANY", type="string", length=1, nullable=true)
+     */
+    private $zablokowany = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AUTOFISKALIZACJA", type="string", length=1, nullable=true)
+     */
+    private $autofiskalizacja = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ZBIORCZE_PLATNOSCI", type="string", length=1, nullable=true)
+     */
+    private $zbiorczePlatnosci = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="LOJAL_PKT", type="integer", nullable=true)
+     */
+    private $lojalPkt = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LOJAL_WARTOSC", type="string", length=9, nullable=true)
+     */
+    private $lojalWartosc = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="MP", type="smallint", nullable=true)
+     */
+    private $mp = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PODLEGA_PROMOCJI", type="string", length=1, nullable=true)
+     */
+    private $podlegaPromocji = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="WEWNETRZNY", type="string", length=1, nullable=true)
+     */
+    private $wewnetrzny = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="OPERATOR_PLATNOSCI", type="string", length=1, nullable=true)
+     */
+    private $operatorPlatnosci = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ZGODA_NA_FAKTURY_ELEKTRONICZNE", type="string", length=1, nullable=true)
+     */
+    private $zgodaNaFakturyElektroniczne = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_FORMY_DOSTAWY_DOM", type="string", length=9, nullable=true)
+     */
+    private $idFormyDostawyDom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_MIEJSCA_DOSTAWY_DOM", type="string", length=9, nullable=true)
+     */
+    private $idMiejscaDostawyDom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_ETYKIETY", type="string", length=9, nullable=true)
+     */
+    private $idEtykiety = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NR_AKCYZOWY", type="string", length=30, nullable=false)
+     */
+    private $nrAkcyzowy = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="AKCYZA_ZWOLNIONY", type="smallint", nullable=false)
+     */
+    private $akcyzaZwolniony = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DOM_SYM_WAL", type="string", length=3, nullable=true)
+     */
+    private $domSymWal = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="VAT_CZYNNY", type="string", length=1, nullable=true)
+     */
+    private $vatCzynny = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TELEFON_FIRMOWY", type="string", length=20, nullable=true)
+     */
+    private $telefonFirmowy;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="KTORY_MAIL_DO_RAPORTOW", type="smallint", nullable=true)
+     */
+    private $ktoryMailDoRaportow = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DOSTEPNY_W_B2B", type="smallint", nullable=true)
+     */
+    private $dostepnyWB2b = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POWIAT", type="string", length=50, nullable=true)
+     */
+    private $powiat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="POWIAT_KOR", type="string", length=50, nullable=true)
+     */
+    private $powiatKor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ID_ALLEGRO", type="string", length=30, nullable=true)
+     */
+    private $idAllegro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LOGIN_ALLEGRO", type="string", length=50, nullable=true)
+     */
+    private $loginAllegro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PRG_LOJAL", type="smallint", nullable=true)
+     */
+    private $prgLojal = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PRG_LOJAL_KWOTA", type="decimal", precision=16, scale=2, nullable=true)
+     */
+    private $prgLojalKwota = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DNI_PO_TERMINIE", type="integer", nullable=true)
+     */
+    private $dniPoTerminie = '0';
+
+
+}
+

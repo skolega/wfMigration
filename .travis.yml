@@ -1,0 +1,37 @@
+sudo: false
+
+env:
+  SYMFONY_ENV=test
+
+language: php
+
+services:
+  - mysql
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+before_install:
+ - mysql -e 'create database gentelella;'
+
+install:
+  - travis_retry composer selfupdate
+  - travis_retry composer install --no-interaction --prefer-source
+
+before_script:
+  - phpenv config-add php.ini.dist
+
+script:
+  - ./vendor/bin/php-cs-fixer fix --verbose --level=symfony
+  - ./vendor/bin/phpunit
+
+after_success:
+after_failure:
+after_script:
+before_deploy:
+deploy:
+after_deploy:
+
+

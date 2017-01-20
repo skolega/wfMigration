@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <h3 class='header'>Istniejące obrazki na dysku</h3>
+        {% if imagesHdd is defined %}
+            {% for imageHdd in imagesHdd %}
+                <div class="col-md-2 bigimage">
+                    <div class="thumbnail">
+                        <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="{{ asset(imageHdd)}}" alt="image" />
+                            <div class="mask">
+                                <p>Dodaj</p>
+                                <div class="tools tools-bottom">
+                                    <a href="#"><i class="fa fa-check"></i></a>
+                                    <a href="#"><i class="fa fa-eye"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}  
+    </div>
+    <div class="row">
+        <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+        <h3 class='header'>Obrazki znalezione w sieci</h3>
+        <form action='{{ path('sendImages',{'id':id}) }}'>
+            {% if images is defined %}
+                {% for image in images %}
+                    <div class="col-md-2 bigimage">
+                        <div class="thumbnail selectable">
+                            <div class="image view view-first">
+                                <img style="width: 100%; display: block;" src="{{ image }}" alt="image" />
+                                <div class="mask">
+                                    <p>Dodaj</p>
+                                    <div class="tools tools-bottom">
+                                        <a href="#"><i class="fa fa-check"></i></a>
+                                        <a href="#"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+    </div>
+    <ul class="nav nav-pills">
+        <li><a href="{{ path('wpposts_index') }}" class="btn btn-primary">Wróć do listy</a></li>
+        <input class="images_count" type="text" value="" name="images_count" style="opacity:0; position:absolute; left:9999px;">
+        <li><input type='submit' value='Wyślij obrazki na serwer' class='btn btn-primary'/></li>
+    </ul>
+</form>
+{% endblock %}
+
+
+

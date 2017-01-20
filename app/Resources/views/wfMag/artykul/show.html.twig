@@ -1,0 +1,476 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Artykul</h1>
+    <div class="row">
+        <div class =" col-md-3 col-sm-6 col-xs-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Idartykulu</th>
+                        <td>{{ artykul.idArtykulu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idmagazynu</th>
+                        <td>{{ artykul.idMagazynu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idkategorii</th>
+                        <td>{{ artykul.idKategorii }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idcenydom</th>
+                        <td>{{ artykul.idCenyDom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idjednostki</th>
+                        <td>{{ artykul.idJednostki }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idjednostkizak</th>
+                        <td>{{ artykul.idJednostkiZak }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idjednostkisprz</th>
+                        <td>{{ artykul.idJednostkiSprz }}</td>
+                    </tr>
+                    <tr>
+                        <th>Vatzakupu</th>
+                        <td>{{ artykul.vatZakupu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Vatsprzedazy</th>
+                        <td>{{ artykul.vatSprzedazy }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwa</th>
+                        <td>{{ artykul.nazwa }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwaoryg</th>
+                        <td>{{ artykul.nazwaOryg }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwa2</th>
+                        <td>{{ artykul.nazwa2 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stan</th>
+                        <td>{{ artykul.stan }}</td>
+                    </tr>
+                    <tr>
+                        <th>Iloscedytowana</th>
+                        <td>{{ artykul.iloscEdytowana }}</td>
+                    </tr>
+                    <tr>
+                        <th>Zamowiono</th>
+                        <td>{{ artykul.zamowiono }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dorezerwacji</th>
+                        <td>{{ artykul.doRezerwacji }}</td>
+                    </tr>
+                    <tr>
+                        <th>Zarezerwowano</th>
+                        <td>{{ artykul.zarezerwowano }}</td>
+                    </tr>
+                    <tr>
+                        <th>Oddostawcow</th>
+                        <td>{{ artykul.odDostawcow }}</td>
+                    </tr>
+                    <tr>
+                        <th>Doodbiorcow</th>
+                        <td>{{ artykul.doOdbiorcow }}</td>
+                    </tr>
+                    <tr>
+                        <th>Indekskatalogowy</th>
+                        <td>{{ artykul.indeksKatalogowy }}</td>
+                    </tr>
+                    <tr>
+                        <th>Indkattowarzast</th>
+                        <td>{{ artykul.indKatTowarZast }}</td>
+                    </tr>
+                    <tr>
+                        <th>Indekshandlowy</th>
+                        <td>{{ artykul.indeksHandlowy }}</td>
+                    </tr>
+                    <tr>
+                        <th>Rodzaj</th>
+                        <td>{{ artykul.rodzaj }}</td>
+                    </tr>
+                    <tr>
+                        <th>Plu</th>
+                        <td>{{ artykul.plu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Swwku</th>
+                        <td>{{ artykul.swwku }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pkwiu</th>
+                        <td>{{ artykul.pkwiu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kodkreskowy</th>
+                        <td>{{ artykul.kodKreskowy }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class ="col-md-3 col-sm-6 col-xs-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Stanminimalny</th>
+                        <td>{{ artykul.stanMinimalny }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stanmaksymalny</th>
+                        <td>{{ artykul.stanMaksymalny }}</td>
+                    </tr>
+                    <tr>
+                        <th>Certyfikat</th>
+                        <td>{{ artykul.certyfikat }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datacertyfikatu</th>
+                        <td>{{ artykul.dataCertyfikatu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwacertyfikatu</th>
+                        <td>{{ artykul.nazwaCertyfikatu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Lokalizacja</th>
+                        <td>{{ artykul.lokalizacja }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenazakupubrutto</th>
+                        <td>{{ artykul.cenaZakupuBrutto }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenazakupunetto</th>
+                        <td>{{ artykul.cenaZakupuNetto }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datazmcz</th>
+                        <td>{{ artykul.dataZmCz }}</td>
+                    </tr>
+                    <tr>
+                        <th>Opis</th>
+                        <td>{{ artykul.opis }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ostrzezenie</th>
+                        <td>{{ artykul.ostrzezenie }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pokazujostrzezenie</th>
+                        <td>{{ artykul.pokazujOstrzezenie }}</td>
+                    </tr>
+                    <tr>
+                        <th>Semafor</th>
+                        <td>{{ artykul.semafor }}</td>
+                    </tr>
+                    <tr>
+                        <th>Flagastanu</th>
+                        <td>{{ artykul.flagaStanu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idartykuluprod</th>
+                        <td>{{ artykul.idArtykuluProd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jednostkaprod</th>
+                        <td>{{ artykul.jednostkaProd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Przelicznikprod</th>
+                        <td>{{ artykul.przelicznikProd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Iloscprod</th>
+                        <td>{{ artykul.iloscProd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Uwagi</th>
+                        <td>{{ artykul.uwagi }}</td>
+                    </tr>
+                    <tr>
+                        <th>Krajpochodzenia</th>
+                        <td>{{ artykul.krajPochodzenia }}</td>
+                    </tr>
+                    <tr>
+                        <th>Waga</th>
+                        <td>{{ artykul.waga }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jedwagi</th>
+                        <td>{{ artykul.jedWagi }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wymiarw</th>
+                        <td>{{ artykul.wymiarW }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class ="col-md-3 col-sm-6 col-xs-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Wymiars</th>
+                        <td>{{ artykul.wymiarS }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wymiarg</th>
+                        <td>{{ artykul.wymiarG }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jedwymiaru</th>
+                        <td>{{ artykul.jedWymiaru }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wyroznik</th>
+                        <td>{{ artykul.wyroznik }}</td>
+                    </tr>
+                    <tr>
+                        <th>Czakupunettowal</th>
+                        <td>{{ artykul.cZakupuNettoWal }}</td>
+                    </tr>
+                    <tr>
+                        <th>Czakupubruttowal</th>
+                        <td>{{ artykul.cZakupuBruttoWal }}</td>
+                    </tr>
+                    <tr>
+                        <th>Symwal</th>
+                        <td>{{ artykul.symWal }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole1</th>
+                        <td>{{ artykul.pole1 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole2</th>
+                        <td>{{ artykul.pole2 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole3</th>
+                        <td>{{ artykul.pole3 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole4</th>
+                        <td>{{ artykul.pole4 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole5</th>
+                        <td>{{ artykul.pole5 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole6</th>
+                        <td>{{ artykul.pole6 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole7</th>
+                        <td>{{ artykul.pole7 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole8</th>
+                        <td>{{ artykul.pole8 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole9</th>
+                        <td>{{ artykul.pole9 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pole10</th>
+                        <td>{{ artykul.pole10 }}</td>
+                    </tr>
+                    <tr>
+                        <th>Guidartykul</th>
+                        <td>{{ artykul.guidArtykul }}</td>
+                    </tr>
+                    <tr>
+                        <th>Podlegarabatowaniu</th>
+                        <td>{{ artykul.podlegaRabatowaniu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kodcn</th>
+                        <td>{{ artykul.kodCn }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwaintrastat</th>
+                        <td>{{ artykul.nazwaIntrastat }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idjednostkiref</th>
+                        <td>{{ artykul.idJednostkiRef }}</td>
+                    </tr>
+                    <tr>
+                        <th>Promocjaod</th>
+                        <td>{{ artykul.promocjaOd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Promocjado</th>
+                        <td>{{ artykul.promocjaDo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenapromocjin</th>
+                        <td>{{ artykul.cenaPromocjiN }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenapromocjib</th>
+                        <td>{{ artykul.cenaPromocjiB }}</td>
+                    </tr>
+                    <tr>
+                        <th>Promocjaprocent</th>
+                        <td>{{ artykul.promocjaProcent }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class ="col-md-3 col-sm-6 col-xs-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Promocjarabat</th>
+                        <td>{{ artykul.promocjaRabat }}</td>
+                    </tr>
+                    <tr>
+                        <th>Zablokowany</th>
+                        <td>{{ artykul.zablokowany }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wylaczcenyind</th>
+                        <td>{{ artykul.wylaczCenyInd }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aktcenprzydostawie</th>
+                        <td>{{ artykul.aktCenPrzyDostawie }}</td>
+                    </tr>
+                    <tr>
+                        <th>Producent</th>
+                        <td>{{ artykul.producent }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idopakowaniaref</th>
+                        <td>{{ artykul.idOpakowaniaRef }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenankgo</th>
+                        <td>{{ artykul.cenaNKgo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cenabkgo</th>
+                        <td>{{ artykul.cenaBKgo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jestzdjecie</th>
+                        <td>{{ artykul.jestZdjecie }}</td>
+                    </tr>
+                    <tr>
+                        <th>Aktywnydlasyszew</th>
+                        <td>{{ artykul.aktywnyDlaSysZew }}</td>
+                    </tr>
+                    <tr>
+                        <th>Minnarzut</th>
+                        <td>{{ artykul.minNarzut }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wymuszajdostawy</th>
+                        <td>{{ artykul.wymuszajDostawy }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idfprom</th>
+                        <td>{{ artykul.idFprom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Marzowy</th>
+                        <td>{{ artykul.marzowy }}</td>
+                    </tr>
+                    <tr>
+                        <th>Domyslnyvatzagranica</th>
+                        <td>{{ artykul.domyslnyVatZaGranica }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dostepnywsklepieinter</th>
+                        <td>{{ artykul.dostepnyWSklepieInter }}</td>
+                    </tr>
+                    <tr>
+                        <th>Zasadazdejmowaniazestanu</th>
+                        <td>{{ artykul.zasadaZdejmowaniaZeStanu }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idetykiety</th>
+                        <td>{{ artykul.idEtykiety }}</td>
+                    </tr>
+                    <tr>
+                        <th>Akcyza</th>
+                        <td>{{ artykul.akcyza }}</td>
+                    </tr>
+                    <tr>
+                        <th>Akcyzajm</th>
+                        <td>{{ artykul.akcyzaJm }}</td>
+                    </tr>
+                    <tr>
+                        <th>Akcyzaprzelicznik</th>
+                        <td>{{ artykul.akcyzaPrzelicznik }}</td>
+                    </tr>
+                    <tr>
+                        <th>Akcyzastawkazajm</th>
+                        <td>{{ artykul.akcyzaStawkaZaJm }}</td>
+                    </tr>
+                    <tr>
+                        <th>Odwrotny</th>
+                        <td>{{ artykul.odwrotny }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idproducenta</th>
+                        <td>{{ artykul.idProducenta }}</td>
+                    </tr>
+                    <tr>
+                        <th>Iddostawcypreferowanego</th>
+                        <td>{{ artykul.idDostawcyPreferowanego }}</td>
+                    </tr>
+                    <tr>
+                        <th>Dostepnywaukcjach</th>
+                        <td>{{ artykul.dostepnyWAukcjach }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nazwacala</th>
+                        <td>{{ artykul.nazwaCala }}</td>
+                    </tr>
+                    <tr>
+                        <th>Idkategoriitree</th>
+                        <td>{{ artykul.idKategoriiTree }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prglojal</th>
+                        <td>{{ artykul.prgLojal }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prgilosc</th>
+                        <td>{{ artykul.prgIlosc }}</td>
+                    </tr>
+                    <tr>
+                        <th>Akcyzaprzelicznikjmja</th>
+                        <td>{{ artykul.akcyzaPrzelicznikJmJa }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <ul class="nav nav-pills">
+        <li>
+            <a class="btn btn-default" href="{{ path('artykul_index') }}">Powrót do listy produktów</a>
+        </li>
+        <li>
+            <a class="btn btn-primary" href="{{ path('artykul_edit', { 'id': artykul.idArtykulu }) }}">Edytuj</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Usuń" class="btn btn-danger">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

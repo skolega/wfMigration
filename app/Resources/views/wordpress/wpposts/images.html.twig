@@ -1,0 +1,22 @@
+{# empty Twig template #}
+{% if images is defined %}
+    {% for post in images %}
+        <div class="col-md-2 bigimage">
+            <div class="thumbnail">
+                <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="{{ post.guid }}" alt="image" />
+                    <div class="mask">
+                        <p>Dodaj</p>
+                        <div class="tools tools-bottom">
+                            <a href="#"><i class="fa fa-link"></i></a>
+                            <a href="#"><i class="fa fa-pencil"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+

@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wppost</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Postauthor</th>
+                <td>{{ wpPost.postAuthor }}</td>
+            </tr>
+            <tr>
+                <th>Postdate</th>
+                <td>{% if wpPost.postDate %}{{ wpPost.postDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Postdategmt</th>
+                <td>{% if wpPost.postDateGmt %}{{ wpPost.postDateGmt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Postcontent</th>
+                <td>{{ wpPost.postContent }}</td>
+            </tr>
+            <tr>
+                <th>Posttitle</th>
+                <td>{{ wpPost.postTitle }}</td>
+            </tr>
+            <tr>
+                <th>Postexcerpt</th>
+                <td>{{ wpPost.postExcerpt }}</td>
+            </tr>
+            <tr>
+                <th>Poststatus</th>
+                <td>{{ wpPost.postStatus }}</td>
+            </tr>
+            <tr>
+                <th>Commentstatus</th>
+                <td>{{ wpPost.commentStatus }}</td>
+            </tr>
+            <tr>
+                <th>Pingstatus</th>
+                <td>{{ wpPost.pingStatus }}</td>
+            </tr>
+            <tr>
+                <th>Postpassword</th>
+                <td>{{ wpPost.postPassword }}</td>
+            </tr>
+            <tr>
+                <th>Postname</th>
+                <td>{{ wpPost.postName }}</td>
+            </tr>
+            <tr>
+                <th>Toping</th>
+                <td>{{ wpPost.toPing }}</td>
+            </tr>
+            <tr>
+                <th>Pinged</th>
+                <td>{{ wpPost.pinged }}</td>
+            </tr>
+            <tr>
+                <th>Postmodified</th>
+                <td>{% if wpPost.postModified %}{{ wpPost.postModified|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Postmodifiedgmt</th>
+                <td>{% if wpPost.postModifiedGmt %}{{ wpPost.postModifiedGmt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Postcontentfiltered</th>
+                <td>{{ wpPost.postContentFiltered }}</td>
+            </tr>
+            <tr>
+                <th>Postparent</th>
+                <td>{{ wpPost.postParent }}</td>
+            </tr>
+            <tr>
+                <th>Guid</th>
+                <td>{{ wpPost.guid }}</td>
+            </tr>
+            <tr>
+                <th>Menuorder</th>
+                <td>{{ wpPost.menuOrder }}</td>
+            </tr>
+            <tr>
+                <th>Posttype</th>
+                <td>{{ wpPost.postType }}</td>
+            </tr>
+            <tr>
+                <th>Postmimetype</th>
+                <td>{{ wpPost.postMimeType }}</td>
+            </tr>
+            <tr>
+                <th>Commentcount</th>
+                <td>{{ wpPost.commentCount }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ wpPost.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('wpposts_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('wpposts_edit', { 'id': wpPost.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

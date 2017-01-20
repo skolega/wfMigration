@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<response>
+    <item key="0">
+        <idArtykulu>1</idArtykulu>
+        <idMagazynu>1</idMagazynu>
+        <idKategorii>2</idKategorii>
+        <idCenyDom>1</idCenyDom>
+        <idJednostki>7</idJednostki>
+        <idJednostkiZak>0</idJednostkiZak>
+        <idJednostkiSprz>0</idJednostkiSprz>
+        <vatZakupu>23 </vatZakupu>
+        <vatSprzedazy>23 </vatSprzedazy>
+        <nazwa>Nostalite 6cm</nazwa>
+        <nazwaOryg>Nostalite 6cm</nazwaOryg>
+        <nazwa2></nazwa2>
+        <stan>.000000</stan>
+        <iloscEdytowana>.000000</iloscEdytowana>
+        <zamowiono>.000000</zamowiono>
+        <doRezerwacji>.000000</doRezerwacji>
+        <zarezerwowano>.000000</zarezerwowano>
+        <odDostawcow>.000000</odDostawcow>
+        <doOdbiorcow>.000000</doOdbiorcow>
+        <indeksKatalogowy>Kos000001</indeksKatalogowy>
+        <indKatTowarZast></indKatTowarZast>
+        <indeksHandlowy>Kos000001</indeksHandlowy>
+        <rodzaj>Produkt</rodzaj>
+        <plu>0</plu>
+        <swwku></swwku>
+        <pkwiu></pkwiu>
+        <kodKreskowy></kodKreskowy>
+        <stanMinimalny>.000000</stanMinimalny>
+        <stanMaksymalny>10000.000000</stanMaksymalny>
+        <certyfikat>0</certyfikat>
+        <dataCertyfikatu>0</dataCertyfikatu>
+        <nazwaCertyfikatu></nazwaCertyfikatu>
+        <lokalizacja>Niepo&#x142;omice</lokalizacja>
+        <cenaZakupuBrutto>23.3700</cenaZakupuBrutto>
+        <cenaZakupuNetto>19.0000</cenaZakupuNetto>
+        <dataZmCz>78878</dataZmCz>
+        <opis>Ponadczasowa uroda kostki Nostalite nawi&#x105;zuje do charakteru tradycyjnych, przytulnych domostw. Wsp&#xF3;&#x142;czesna wersja starego bruku, o klasycznym kszta&#x142;cie i mi&#x119;kko zaokr&#x105;glonych kraw&#x119;dziach. U&#x142;o&#x17C;one w ogrodzie ko&#x142;o stworzy przyjazne miejsce spotka&#x144; w gronie przyjaci&#xF3;&#x142; i b&#x119;dzie prowokowa&#x107; do beztroski.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </opis>
+        <ostrzezenie>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ostrzezenie>
+        <pokazujOstrzezenie>0</pokazujOstrzezenie>
+        <semafor/>
+        <flagaStanu>0</flagaStanu>
+        <idArtykuluProd>1</idArtykuluProd>
+        <jednostkaProd></jednostkaProd>
+        <przelicznikProd>1.000000</przelicznikProd>
+        <iloscProd>1.000000</iloscProd>
+        <uwagi>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </uwagi>
+        <krajPochodzenia>PL</krajPochodzenia>
+        <waga>131.000</waga>
+        <jedWagi>kg</jedWagi>
+        <wymiarW>6.000</wymiarW>
+        <wymiarS>1.000</wymiarS>
+        <wymiarG>1.000</wymiarG>
+        <jedWymiaru>cm</jedWymiaru>
+        <wyroznik></wyroznik>
+        <cZakupuNettoWal>.0000</cZakupuNettoWal>
+        <cZakupuBruttoWal>.0000</cZakupuBruttoWal>
+        <symWal></symWal>
+        <pole1></pole1>
+        <pole2></pole2>
+        <pole3></pole3>
+        <pole4></pole4>
+        <pole5></pole5>
+        <pole6></pole6>
+        <pole7></pole7>
+        <pole8></pole8>
+        <pole9></pole9>
+        <pole10></pole10>
+        <guidArtykul>4A696C0E-25AE-4697-8F8A-B9DA196B486E</guidArtykul>
+        <podlegaRabatowaniu>1</podlegaRabatowaniu>
+        <kodCn></kodCn>
+        <nazwaIntrastat>Nostalite 6cm</nazwaIntrastat>
+        <idJednostkiRef>0</idJednostkiRef>
+        <promocjaOd>0</promocjaOd>
+        <promocjaDo>0</promocjaDo>
+        <cenaPromocjiN>.0000</cenaPromocjiN>
+        <cenaPromocjiB>.0000</cenaPromocjiB>
+        <promocjaProcent>.0000</promocjaProcent>
+        <promocjaRabat>0</promocjaRabat>
+        <zablokowany>0</zablokowany>
+        <wylaczCenyInd>0         </wylaczCenyInd>
+        <aktCenPrzyDostawie>1</aktCenPrzyDostawie>
+        <producent>Sprzeda&#x17C; detaliczna</producent>
+        <idOpakowaniaRef>0</idOpakowaniaRef>
+        <cenaNKgo>.0000</cenaNKgo>
+        <cenaBKgo>.0000</cenaBKgo>
+        <jestZdjecie>0</jestZdjecie>
+        <aktywnyDlaSysZew>1</aktywnyDlaSysZew>
+        <minNarzut>.00</minNarzut>
+        <wymuszajDostawy>0</wymuszajDostawy>
+        <idFprom>0</idFprom>
+        <marzowy>0</marzowy>
+        <domyslnyVatZaGranica>0</domyslnyVatZaGranica>
+        <dostepnyWSklepieInter>1</dostepnyWSklepieInter>
+        <zasadaZdejmowaniaZeStanu></zasadaZdejmowaniaZeStanu>
+        <idEtykiety>0</idEtykiety>
+        <akcyza>0</akcyza>
+        <akcyzaJm></akcyzaJm>
+        <akcyzaPrzelicznik>.000000</akcyzaPrzelicznik>
+        <akcyzaStawkaZaJm>.0000</akcyzaStawkaZaJm>
+        <odwrotny>0</odwrotny>
+        <idProducenta>1</idProducenta>
+        <idDostawcyPreferowanego>0</idDostawcyPreferowanego>
+        <dostepnyWAukcjach>1</dostepnyWAukcjach>
+        <nazwaCala>Nostalite 6cm</nazwaCala>
+        <idKategoriiTree>1</idKategoriiTree>
+        <prgLojal>1</prgLojal>
+        <prgIlosc>1</prgIlosc>
+        <akcyzaPrzelicznikJmJa>.000000</akcyzaPrzelicznikJmJa>
+    </item>
+</response>

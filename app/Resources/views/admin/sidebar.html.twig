@@ -1,0 +1,105 @@
+<!-- sidebar menu -->
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <h3>General</h3>
+        <ul class="nav side-menu">
+            <li><a><i class="fa fa-home"></i> Produkty <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('index_allegro') }}">Produkty Allegro</a></li>
+                    <li><a href="{{ path('wpposts_index') }}">Produkty WooCommerce</a></li>
+                    <li><a href="{{ path('artykul_index') }}">Produkty Wf-Mag</a></li>
+                </ul>
+            </li> 
+            <li><a><i class="fa fa-table"></i> Zamówienia <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'tables'}) }}">Zamówienie Klient</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'tables'}) }}">Zamówienie Producent</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'tables_dynamic'}) }}">Lista zamówień</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-edit"></i> Klaendarz/Zadania <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'form'}) }}">Kalendarz</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'form_advanced'}) }}">Dodaj </a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'form_validation'}) }}">Form Validation</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'form_wizards'}) }}">Form Wizard</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'form_upload'}) }}">Form Upload</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'form_buttons'}) }}">Form Buttons</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-desktop"></i> Transporty <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'general_elements'}) }}">General Elements</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'media_gallery'}) }}">Media Gallery</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'typography'}) }}">Typography</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'icons'}) }}">Icons</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'glyphicons'}) }}">Glyphicons</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'widgets'}) }}">Widgets</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'invoice'}) }}">Invoice</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'inbox'}) }}">Inbox</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'calendar'}) }}">Calendar</a></li>
+                </ul>
+            </li>
+           
+            <li><a><i class="fa fa-bar-chart-o"></i> Sozializer <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'chartjs'}) }}">Chart JS</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'chartjs2'}) }}">Chart JS2</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'morisjs'}) }}">Moris JS</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'echarts'}) }}">ECharts</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'other_charts'}) }}">Other Charts</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'fixed_sidebar'}) }}">Fixed Sidebar</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'fixed_footer'}) }}">Fixed Footer</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="menu_section">
+        <h3>Live On</h3>
+        <ul class="nav side-menu">
+            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'e_commerce'}) }}">E-commerce</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'projects'}) }}">Projects</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'project_detail'}) }}">Project Detail</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'contacts'}) }}">Contacts</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'profile'}) }}">Profile</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('app_gentelella', {'page': 'page_403'}) }}">403 Error</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'page_404'}) }}">404 Error</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'page_500'}) }}">500 Error</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'plain_page'}) }}">Plain Page</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'login'}) }}">Login Page</a></li>
+                    <li><a href="{{ path('app_gentelella', {'page': 'pricing_tables'}) }}">Pricing Tables</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="#level1_1">Level One</a>
+                    <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="{{ path('app_gentelella', {'page': 'level2'}) }}">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#level1_2">Level One</a>
+                    </li>
+                </ul>
+            </li>                  
+            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+        </ul>
+    </div>
+
+</div>
+<!-- /sidebar menu -->

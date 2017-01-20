@@ -1,0 +1,28 @@
+wp_connection:
+    resource: "@WpConnectionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+wf_mag_connection:
+    resource: "@WfMagConnectionBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+    
+tasks:
+    resource: "@AppBundle/Controller/TaskController.php"
+    type:     rest
+    prefix: /api

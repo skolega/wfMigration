@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host1: localhost
+    database_prefix1: BUZ
+    database_name1: WAPRO_DEMO
+    database_user1: sa
+    database_password1: Wapro3000
+    database_host2: 127.0.0.1
+    database_port2: 3307
+    database_name2: wordpress
+    database_user2: root
+    database_password2: 
+        
+    pathToWp: 'http://localhost:8080/wordpress/'
+    productImagesPath: 'images/products/'
+    wcProductImagesPath: 'C:\\xampp\\htdocs\\wordpress\\wp-content\\uploads\\'
